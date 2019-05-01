@@ -6,7 +6,8 @@ module.exports = {
   getById,
   insert,
   update,
-  remove
+  remove,
+  getCohortStudents
 }
 
 function get() {
@@ -58,4 +59,11 @@ function remove(id) {
   .then(ids => {
     return getById(ids[0]); //returns the generated item by using the [0](id) to search by id 
   })
+}
+
+function getCohortStudents(studentId) {
+  return db('students')
+  .where('cohort_id', studentId)
+  .first()
+  
 }
