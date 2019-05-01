@@ -1,7 +1,7 @@
 //import libraries and dependencies
 const express = require('express');
 const helmet = require('helmet');
-const morgan = require('morgan');
+// const morgan = require('morgan');
 const cors = require('cors');
 require('dotenv').config()
 
@@ -15,7 +15,7 @@ const server = express();
 server.use(express.json());
 server.use(helmet());
 server.use(cors());
-server.use(morgan('dev'));
+// server.use(morgan('dev'));
 
 
 //create middleware
