@@ -6,7 +6,8 @@ const cors = require('cors');
 require('dotenv').config()
 
 //import routes and env items
-const lambdaRoute = require('./routes/lambdaRoute')
+const studentRoute = require('./routes/studentRoute')
+const cohortRoute = require('./routes/cohortRoute')
 const response = process.env.TEST
 
 //define server
@@ -21,7 +22,8 @@ server.use(morgan('dev'));
 
 
 //run routes
-server.use('/api/lambda', lambdaRoute)
+server.use('/api/students', studentRoute)
+server.use('/api/cohorts', cohortRoute)
 
 //check server status
 server.get('/', (req, res) => {
