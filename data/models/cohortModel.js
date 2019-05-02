@@ -61,9 +61,9 @@ function remove(id) {
   })
 }
 
-function getCohortStudents(studentId) {
+function getCohortStudents(cohortId) {
   return db('students')
-  .where('cohort_id', studentId)
-  .first()
-  
+  .where('cohort_id', cohortId)
+  .then( students => students.map(student => { return { ...student}}))
+
 }
